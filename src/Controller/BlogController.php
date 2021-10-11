@@ -48,8 +48,10 @@ class BlogController extends AbstractController
 
             $this->addFlash('success', 'Article publié avec succès !');
 
-            // TODO: Changer la redirection vers la page de l'article créé
-            return $this->redirectToRoute('main_home');
+
+            return $this->redirectToRoute('blog_publication_view', [
+                'slug' => $newArticle->getSlug(),
+            ]);
 
         }
 
@@ -57,4 +59,35 @@ class BlogController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+    /**
+     * Page qui liste tous les articles
+     *
+     * @Route("/publications/liste/", name="publication_list")
+     */
+    public function publicationList(): Response
+    {
+
+        $articleRepo = $this->getDoctrine()->getRepository(Article::class);
+
+        $articles = $articleRepo->findAll();
+
+        return $this->render('blog/publicationList.html.twig', [
+            'articles' => $articles,
+        ]);
+    }
+
+    /**
+     * Page permettant de voir un article en détail
+     *
+     * @Route("/publication/{slug}/", name="publication_view")
+     */
+    public function publicationView(Article $article): Response
+    {
+
+        return $this->render('blog/publicationView.html.twig', [
+            'article' => $article,
+        ]);
+    }
+
 }
