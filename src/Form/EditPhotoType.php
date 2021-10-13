@@ -25,7 +25,7 @@ class EditPhotoType extends AbstractType
                         'message' => 'Vous devez sélectionner un fichier',
                     ]),
                     new File([
-                        'maxSize' => '2M',
+                        'maxSize' => '5M',
                         'maxSizeMessage' => 'Fichier trop volumineux ({{ size }} {{ suffix }}). La taille maximum autorisée est de {{ limit }} {{ suffix }}',
                         'mimeTypes' => [
                             'image/jpeg',
