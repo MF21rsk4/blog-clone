@@ -76,8 +76,6 @@ class AppFixtures extends Fixture
 
         }
 
-        // TODO: ajouter les commentaires
-
 
         // Sauvegarde des nouvelles entités dans la base de données
         $manager->flush();

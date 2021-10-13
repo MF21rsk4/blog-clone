@@ -88,6 +88,14 @@
                                     <p>{{ comment.content|nl2br }}</p>
                                 </div>
 
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <div class="admin-button-article">
+                                        <a onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce commentaire ?')" class="text-danger text-decoration-none" href="{{ path('blog_comment_delete', {'id': comment.id, 'csrf_token' : csrf_token('blog_comment_delete' ~ comment.id ) }) }}">
+                                            <i class="fas fa-trash-alt me-1"></i>Supprimer
+                                        </a>
+                                    </div>
+                                {% endif %}
+
                             </div>
                         </div>
 
