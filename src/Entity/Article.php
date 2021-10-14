@@ -36,7 +36,10 @@ class Article
     private $publicationDate;
 
     /**
+     * OrderBy permet que les commentaires soient toujours triés par date de publication du plus ancien au plus récent quand ils sont récupérés via un article
+     *
      * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="article", orphanRemoval=true)
+     * @ORM\OrderBy({"publicationDate" = "ASC"})
      */
     private $comments;
 

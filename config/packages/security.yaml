@@ -20,14 +20,23 @@ security:
             security: false
         main:
             login_throttling:
+<<<<<<< HEAD
                 max_attempts: 5
                 interval: '15 minutes'
+=======
+                max_attempts: 5     # Blocage des tentatives de connexion échouées au bout de 5 échecs
+                interval: '15 minutes'      # Temps avant déblocage
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
             lazy: true
             provider: app_user_provider
             custom_authenticator: App\Security\LoginFormAuthenticator
             logout:
                 path: app_logout
+<<<<<<< HEAD
                 # where to redirect after logout
+=======
+                # Page où rediriger l'utilisateur après une déconnexion
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
                 target: app_login
 
             # activate different ways to authenticate

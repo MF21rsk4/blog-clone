@@ -1,11 +1,25 @@
+<<<<<<< HEAD
 {% extends 'base.html.twig' %}
 
 {% block title %}Liste des publications{% endblock %}
 
+=======
+{# Utilisation du squelette de page base.html.twig #}
+{% extends 'base.html.twig' %}
+
+{# Titre de la page #}
+{% block title %}Liste des publications{% endblock %}
+
+{# Contenu de la page #}
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
 {% block body %}
 
     <div class="container-fluid">
 
+<<<<<<< HEAD
+=======
+        {# Titre h1 #}
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
         <div class="row">
             <h1 class="col-12 text-center my-5">Publications du Blog de Batman</h1>
         </div>
@@ -14,6 +28,10 @@
 
             <div class="col-12 col-md-8 offset-md-2">
 
+<<<<<<< HEAD
+=======
+                {# Affichage du nombre total d'articles (attribut apporté par knp_paginator) #}
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
                 <div class="row">
                     <p class="col-12 text-center">Nombre total d'articles : {{ articles.getTotalItemCount }}</p>
                 </div>
@@ -31,27 +49,53 @@
 
                 {% endif %}
 
+<<<<<<< HEAD
                 {% for article in articles %}
 
                     <div class="row">
                         {# Un article #}
+=======
+                {# Boucle pour parcourir tous les articles à afficher #}
+                {% for article in articles %}
+
+                    <div class="row">
+
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
                         <div class="col-12">
 
                             <div class="card my-3 bg-black">
 
                                 <div class="card-header">
+<<<<<<< HEAD
+=======
+
+                                    {# Titre de l'article, cliquable vers la page détaillée de l'article #}
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
                                     <a class="text-decoration-none" href="{{ path('blog_publication_view', {'slug': article.slug}) }}"><i class="far fa-newspaper me-2"></i>{{ article.title }}</a>
                                 </div>
 
                                 <div class="card-body">
 
                                     <div class="mb-2">
+<<<<<<< HEAD
+=======
+
+                                        {# Affichage du contenu de l'article, tronqué à 150 caractères, sans balises html, suivi de "..." et d'un lien "lire la suite" #}
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
                                         {{ article.content|striptags|slice(0, 150) }}...
                                         <a class="text-decoration-none" href="{{ path('blog_publication_view', {'slug': article.slug}) }}">Lire la suite</a>
                                     </div>
 
+<<<<<<< HEAD
                                     <footer class="blockquote-footer my-2">Publié le <strong>{{ article.publicationDate|date('d/m/Y à H\\hi') }}</strong> par <strong>{{ article.author.pseudonym }}</strong></footer>
 
+=======
+                                    {# Date et auteur de l'article #}
+                                    <footer class="blockquote-footer my-2">Publié le <strong>{{ article.publicationDate|date('d/m/Y à H\\hi') }}</strong> par <strong>{{ article.author.pseudonym }}</strong></footer>
+
+
+                                    {# Si l'utilisateur a le rôle admin, on affiche un menu avec un bouton permettant de supprimer/modifier l'article #}
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
                                     {% if is_granted('ROLE_ADMIN') %}
 
                                         <p class="mb-0 mt-3">

@@ -5,12 +5,20 @@ liip_imagine:
 
     filter_sets:
 
+<<<<<<< HEAD
+=======
+        # Paramétrage du filtre pour l'affichage de la photo de profil dans la page "mon profil"
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
         profil:
             quality: 75
             filters:
                 scale:
                     dim: [ 700, 700 ]
 
+<<<<<<< HEAD
+=======
+        # Paramétrage du filtre pour l'affichage des photos de profil dans la page qui affiche les commentaires
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
         comment:
             quality: 75
             filters:

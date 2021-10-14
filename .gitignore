@@ -19,12 +19,20 @@
 .phpunit.result.cache
 ###< phpunit/phpunit ###
 
+###> liip/imagine-bundle ###
+/public/media/cache/
+###< liip/imagine-bundle ###
+
 ### exlusions persos
 .idea/
 /migrations/*.php
 /public/images/profils/*
 !/public/images/profils/.gitignore
+<<<<<<< HEAD
 ###
 ###> liip/imagine-bundle ###
 /public/media/cache/
 ###< liip/imagine-bundle ###
+=======
+###
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b

@@ -16,6 +16,11 @@ class CommentFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+<<<<<<< HEAD
+=======
+
+            // Champ contenu
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
             ->add('content', TextareaType::class, [
                 'label' => false,
                 'attr' => [
@@ -35,6 +40,10 @@ class CommentFormType extends AbstractType
                 ],
             ])
 
+<<<<<<< HEAD
+=======
+            // Bouton de validation
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
             ->add('save', SubmitType::class, [
                 'label' => 'Publier',
                 'attr' => [

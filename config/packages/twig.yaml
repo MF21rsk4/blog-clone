@@ -5,7 +5,15 @@ twig:
     form_themes: ['bootstrap_5_layout.html.twig']
 
     globals:
+<<<<<<< HEAD
         site_name: '%app.site_name%'
+=======
+
+        # Récupération du nom du site dans le fichier services.yaml
+        site_name: '%app.site_name%'
+
+        # Récupération de la clé publique Google Recaptcha depuis le fichier services.yaml
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
         google_recaptcha_site_key: '%env(GOOGLE_RECAPTCHA_SITE_KEY)%'
 
 when@test:

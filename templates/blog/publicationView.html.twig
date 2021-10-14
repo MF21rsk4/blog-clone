@@ -1,22 +1,44 @@
+<<<<<<< HEAD
 {% extends 'base.html.twig' %}
 
 {% block title %}{{ article.title }}{% endblock %}
 
 
+=======
+{# Utilisation du squelette de page base.html.twig #}
+{% extends 'base.html.twig' %}
+
+{# Titre de la page #}
+{% block title %}{{ article.title }}{% endblock %}
+
+{# Contenu de la page #}
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
 {% block body %}
 
     <div class="container-fluid">
 
+<<<<<<< HEAD
+=======
+        {# Titre h1 #}
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
         <div class="row">
             <h1 class="col-12 text-center my-5">{{ article.title }}</h1>
         </div>
 
+<<<<<<< HEAD
+=======
+        {# Lien pour retourner à la liste des articles #}
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
         <div class="row">
             <p class="text-center col-12">
                 <a class="text-decoration-none" href="{{ path('blog_publication_list') }}">Retour liste des articles</a>
             </p>
         </div>
 
+<<<<<<< HEAD
+=======
+        {# Affichage de l'article #}
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
         <div class="row">
 
             <div class="col-12 col-md-8 offset-md-2">
@@ -25,12 +47,24 @@
 
                     <div class="card-body">
 
+<<<<<<< HEAD
                         <footer class="blockquote-footer mt-0 mb-4">Publié le <strong class="text-light">{{ article.publicationDate|date('d/m/Y à H\\hi') }}</strong> par <strong class="text-light">{{ article.author.pseudonym }}</strong></footer>
 
+=======
+                        {# Date et auteur de l'article #}
+                        <footer class="blockquote-footer mt-0 mb-4">Publié le <strong class="text-light">{{ article.publicationDate|date('d/m/Y à H\\hi') }}</strong> par <strong class="text-light">{{ article.author.pseudonym }}</strong></footer>
+
+                        {# Affichage du contenu de l'article, nettoyé de tout code html dangereux ! (filtre amené par le bundle "exercise/htmlpurifier-bundle") #}
+                        {# On est obligé de faire comme ça pour conserver le code html produit par l'éditeur CKEditor, sans se mettre en danger avec des failles XSS #}
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
                         <div class="mb-2">
                             {{ article.content|purify }}
                         </div>
 
+<<<<<<< HEAD
+=======
+                        {# Si l'utilisateur a le rôle admin, on affiche un menu avec un bouton permettant de supprimer/modifier l'article #}
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
                         {% if is_granted('ROLE_ADMIN') %}
 
                             <p class="mb-0 mt-3">
@@ -61,8 +95,15 @@
 
                 <div class="bg-black p-4 my-4">
 
+<<<<<<< HEAD
                     <h2 class="text-center mb-5">Commentaires ({{ article.comments|length }})</h2>
 
+=======
+                    {# Nombre de commentaire dans le titre H2 #}
+                    <h2 class="text-center mb-5">Commentaires ({{ article.comments|length }})</h2>
+
+                    {# Affichage de tous les commentaires en les parcourant avec une boucle #}
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
                     {% for comment in article.comments %}
 
                         <div class="card my-3 bg-dark">
@@ -71,6 +112,10 @@
                                 {# Affichage de la photo de profil de l'auteur, ou de la photo par défaut s'il n'en pas #}
                                 <div class="px-0 mx-2 d-flex justify-content-center align-items-center comment-profil-photo bg-black">
 
+<<<<<<< HEAD
+=======
+                                    {# Affichage de la photo de profil de l'auteur, ou de la photo par défaut s'il n'en pas #}
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
                                     {% if comment.author.photo is null %}
                                         <img class="img-fluid" src="{{ asset('images/profil_default.jpg')|imagine_filter('comment') }}" alt="">
                                     {% else %}
@@ -81,13 +126,21 @@
 
                                 </div>
 
+<<<<<<< HEAD
                                 {# Affichage de la date de publication du commentaire et du pseudo de son auteur #}
+=======
+                                {# Date et auteur de l'article #}
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
                                 <div class="col-12 col-sm mt-2 mt-sm-0">
                                     <footer class="blockquote-footer mt-0 mb-4">Ajouté par <strong class="text-light mr-1">{{ comment.author.pseudonym }}</strong>
                                         <br class="d-sm-none">Le <strong class="text-light">{{ comment.publicationDate|date('d/m/Y à H\\hi') }}</strong></footer>
                                     <p>{{ comment.content|nl2br }}</p>
                                 </div>
 
+<<<<<<< HEAD
+=======
+                                {# Si le'utilisateur est admin, affichage d'un menu admin avec un bouton de suppression du commentaire #}
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
                                 {% if is_granted('ROLE_ADMIN') %}
                                     <div class="admin-button-article">
                                         <a onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce commentaire ?')" class="text-danger text-decoration-none" href="{{ path('blog_comment_delete', {'id': comment.id, 'csrf_token' : csrf_token('blog_comment_delete' ~ comment.id ) }) }}">
@@ -103,7 +156,11 @@
                         <p class="text-center alert alert-warning">Aucun commentaire n'a été publié pour le moment.</p>
                     {% endfor %}
 
+<<<<<<< HEAD
 
+=======
+                    {# Si l'utilisateur est connecté, affichage du formulaire de création d'un nouveau commentaire #}
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
                     {% if app.user %}
 
                         <h2 class="text-center my-5">Écrire un commentaire</h2>

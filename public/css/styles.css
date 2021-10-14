@@ -1,14 +1,22 @@
 /* Police */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-
-
+/* body */
 body{
     font-family: 'Poppins', sans-serif;
     background-color: #1A1D45;
     color: #F5F7F9;
 }
 
+
+/* Menu principal */
+.main-navbar .main-navbar-logo{
+    width: 55px;
+    margin-right: 16px;
+}
+
+
+/* Page d'accueil */
 .batman-cover{
     background-image: url('../images/batman-cover.png');
     background-attachment: fixed;
@@ -16,10 +24,13 @@ body{
     height: 400px;
 }
 
+<<<<<<< HEAD
 .main-navbar .main-navbar-logo{
     width: 55px;
     margin-right: 16px;
 }
+=======
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
 
 /* Menus paginations */
 .pagination .page-item .page-link{
@@ -39,12 +50,20 @@ body{
     background-color: #292929;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
 /* Affichage des images de profil dans les commentaires */
 .comment-profil-photo{
     width: 100px;
     height: 100px;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
 /* Position du bouton suppression d'un commentaire */
 .admin-button-article{
     position: absolute;

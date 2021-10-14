@@ -26,7 +26,11 @@ class RecaptchaValidator{
             return false;
         }
         $params = [
+<<<<<<< HEAD
             'secret'    => $this->params->get('google_recaptcha.private_key'),
+=======
+            'secret'    => $this->params->get('google_recaptcha.private_key'),  // Récupération de la clé privée de Google Recaptcha depuis les paramètres du site
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
             'response'  => $recaptchaResponse
         ];
         if($ip){

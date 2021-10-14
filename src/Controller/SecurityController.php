@@ -16,7 +16,11 @@ class SecurityController extends AbstractController
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
+<<<<<<< HEAD
         // Si l'utilisateur est déjà connecté, on le redirige sur l'accueil
+=======
+        // Si l'utilisateur est déjà connecté, on le redirige de force sur la page d'accueil du site
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
         if ($this->getUser()) {
             return $this->redirectToRoute('main_home');
         }
@@ -37,7 +41,11 @@ class SecurityController extends AbstractController
     public function logout(): void
     {
 
+<<<<<<< HEAD
         // Le code ici ne sera jamais lu (intercepté par le bundle security)
+=======
+        // Le code ici ne sera jamais lu car la page de déconnexion est déjà gérée en interne par le bundle security.
+>>>>>>> faf3f9f0d923a0fe1b93a376d8d4d2fe9d11767b
 
         throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
